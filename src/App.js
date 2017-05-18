@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import SideBar from './SideBar.js';
+import Grid from './Grid.js';
 
 class App extends Component {
   constructor(props){
@@ -13,11 +14,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <button onClick={() => this.show()}>Create!</button>
-          <h2>Re-Create: Drag and Drop Components!</h2>
-          {this.state.showSideBar ? <SideBar /> : null}
+        <div className={this.state.showSideBar ? "Flex": null}>
+          <div className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <button onClick={() => this.show()}>Create!</button>
+            <h2>Re-Create: Drag and Drop Components!</h2>
+            {this.state.showSideBar ? <SideBar /> : null}
+          </div>
+            <Grid />
         </div>
       </div>
     );

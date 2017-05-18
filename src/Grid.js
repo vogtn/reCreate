@@ -6,6 +6,7 @@ class Grid extends Component {
     render(){
         return(
             <div className="board">
+                <h2>this is the page</h2>
             </div>
         )
     }
