@@ -1,20 +1,31 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import SideBar from './SideBar.js';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      showSideBar: false
+    }
+  }
   render() {
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <button onClick={() => this.show()}>Create!</button>
+          <h2>Re-Create: Drag and Drop Components!</h2>
+          {this.state.showSideBar ? <SideBar /> : null}
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
+  }
+  show = () => {
+    this.setState({
+      showSideBar: !this.state.showSideBar
+    })
   }
 }
 
