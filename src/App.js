@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className={this.state.showSideBar ? "Flex": null}>
-          <div className="App-header">
+          <div className={this.state.showSideBar ? "App-SideBar" : "App-header"}>
             <img src={logo} className="App-logo" alt="logo" />
             <button onClick={() => this.show()}>Create!</button>
             <h2>Re-Create: Drag and Drop Components!</h2>
