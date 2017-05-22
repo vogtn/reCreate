@@ -6,7 +6,12 @@ class SideBar extends Component {
     render(){
         return(
             <div className="sidebar">
-                <h1>Hello</h1>
+                <ul>
+                    <li><h1>H1 Text</h1></li>
+                    <li><h2>H2 Text</h2></li>
+                    <li><button>Button</button></li>
+                    <li><input readOnly type="text"></input></li>
+                </ul>
             </div>
         )
     }
