@@ -21,7 +21,6 @@ class App extends Component {
             <h2>Re-Create: Drag and Drop Components!</h2>
             {this.state.showSideBar ? <SideBar /> : null}
           </div>
-            <Grid />
         </div>
       </div>
     );
