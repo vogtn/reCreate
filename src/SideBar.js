@@ -10,7 +10,8 @@ class SideBar extends Component {
             textClicked: false,
             buttons: [],
             h1Tags: [],
-            h2Tags: []
+            h2Tags: [],
+            text: ''
         }
     }
     render(){
@@ -25,8 +26,8 @@ class SideBar extends Component {
                     </ul>
                     {this.state.textClicked ? <div>
                         <p>Enter text: </p>
-                        <input type="text"></input>
-                        <button>Add</button>
+                        <input type="text" value={this.state.text} onChange={()=> this.updateText()}></input>
+                        <button onClick={() => this.addText()}>Add</button>
                     </div>
                     : null}
                 </div>
@@ -38,15 +39,6 @@ class SideBar extends Component {
         console.log('h1 was clicked');
         //open editor
         this.setState({textClicked: !this.state.textClicked});
-
-
-        var h1Array = this.state.h1Tags;
-        h1Array.push(
-            <h1></h1>
-        )
-        this.setState({
-            h1Tags: h1Array
-        })
     }
     _h2Click = () => {
         console.log('h2 was clicked');
@@ -56,6 +48,20 @@ class SideBar extends Component {
     }
     _inputClick = () => {
         console.log('input was clicked');
+    }
+    _updateText = () => {
+        this.setState({
+            text: this.state.text
+        })
+    }
+    _addText = () => {
+        var h1Array = this.state.h1Tags;
+        h1Array.push(
+            <h1>{this.state.text}</h1>
+        )
+        this.setState({
+            h1Tags: h1Array
+        })
     }
 }
 
